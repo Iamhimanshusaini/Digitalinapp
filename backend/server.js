@@ -12,7 +12,13 @@ const cors = require('cors')
 
 
 app.use(express.json())
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({
+    origin: "https://gorgeous-nougat-65cba1.netlify.app/",
+    credentials: true,
+  })
+);
 
 app.use('/api', contactFormRoute)
 app.use("/api", blogRoute)
